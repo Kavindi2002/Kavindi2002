@@ -1,5 +1,5 @@
-<h1 align="center">Hi 👋, I'm Kavindi Wickramasinha</h1>
-<h3 align="center">A passionate frontend developer from India</h3>
+<h1 align="left"> I'm Kavindi Wickramasinha</h1>
+<h3 align="left">Software Engineering Undergraduate at KIU</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=kavindi2002&label=Profile%20views&color=0e75b6&style=flat" alt="kavindi2002" /> </p>
 
