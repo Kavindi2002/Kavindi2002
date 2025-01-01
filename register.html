@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="register.css" />
+  </head>
+  <body>
+    <section class="home">
+      <div class="home-box">
+        <nav>
+          <div class="logo-bars">
+            <div class="bars">
+              <i class="fa fa-bars"></i>
+            </div>
+            <h3>Flywold</h3>
+          </div>
+          <div class="menu">
+            <div class="close">
+              <i class="fa fa-close"></i>
+            </div>
+            <ul>
+              <li>
+                <a href="C:\Users\DELL\Desktop\my New Web\home.html">home</a>
+              </li>
+              <li><a href="#">packages</a></li>
+              <li><a href="#">contecd us</a></li>
+              <li><a href="#">placess</a></li>
+            </ul>
+          </div>
+          <div class="siignup-logn">
+            <a href="#">sing up</a>
+            <a href="#">login</a>
+          </div>
+        </nav>
+      </div>
+      <script src="home.js"></script>
+
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+    </section>
+    <form id="registrationForm" action="cn.php" method="post">
+      <h2>Register</h2>
+
+      <label for="role">Job Role:</label>
+      <select id="role" name="role" required>
+        <option value="" disabled selected>Select role</option>
+        <option value="driver">Driver</option>
+        <option value="restaurant_manager">Restaurant Manager</option>
+        <option value="tour_guide">Tour Guide</option>
+      </select>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required />
+      <div class="box">
+        <div class="box2">
+          <label for="registration_number">Registration Number:</label>
+          <input
+            type="text"
+            id="registration_number"
+            name="registration_number"
+            required
+          />
+        </div>
+        <div class="box3">
+          <label for="nic">NIC Number:</label>
+          <input type="text" id="nic" name="nic" required />
+        </div>
+      </div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <div id="driverFields" class="hidden">
+        <label for="license_number">Driver's License Number:</label>
+        <input type="text" id="license_number" name="license_number" />
+
+        <label for="vehicle_type">Vehicle Type:</label>
+        <input type="text" id="vehicle_type" name="vehicle_type" />
+
+        <label for="vehicle_number">Vehicle Number:</label>
+        <input type="text" id="vehicle_number" name="vehicle_number" />
+
+        <label for="driver_experience">Experience (Years):</label>
+        <input type="number" id="driver_experience" name="driver_experience" />
+      </div>
+
+      <div id="managerFields" class="hidden">
+        <label for="restaurant_name">Restaurant Name:</label>
+        <input type="text" id="restaurant_name" name="restaurant_name" />
+
+        <label for="restaurant_registration"
+          >Restaurant Registration Number:</label
+        >
+        <input
+          type="text"
+          id="restaurant_registration"
+          name="restaurant_registration"
+        />
+
+        <label for="classification">Restaurant Classification Class:</label>
+        <input type="text" id="classification" name="classification" />
+
+        <label for="restaurant_details">Details:</label>
+        <textarea id="restaurant_details" name="restaurant_details"></textarea>
+
+        <label for="restaurant_image">Upload Image:</label>
+        <input
+          type="file"
+          id="restaurant_image"
+          name="restaurant_image"
+          accept="image/*"
+        />
+      </div>
+
+      <div id="guideFields" class="hidden">
+        <label for="tourism_registration"
+          >Ministry of Tourism Registration Number:</label
+        >
+        <input
+          type="text"
+          id="tourism_registration"
+          name="tourism_registration"
+        />
+
+        <label for="guide_experience">Experience (Years):</label>
+        <input type="number" id="guide_experience" name="guide_experience" />
+
+        <label for="languages">Languages Spoken (comma-separated):</label>
+        <input type="text" id="languages" name="languages" />
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <script>
+      const roleSelect = document.getElementById("role");
+      const driverFields = document.getElementById("driverFields");
+      const managerFields = document.getElementById("managerFields");
+      const guideFields = document.getElementById("guideFields");
+
+      roleSelect.addEventListener("change", () => {
+        driverFields.classList.add("hidden");
+        managerFields.classList.add("hidden");
+        guideFields.classList.add("hidden");
+
+        const selectedRole = roleSelect.value;
+
+        if (selectedRole === "driver") {
+          driverFields.classList.remove("hidden");
+        } else if (selectedRole === "restaurant_manager") {
+          managerFields.classList.remove("hidden");
+        } else if (selectedRole === "tour_guide") {
+          guideFields.classList.remove("hidden");
+        }
+      });
+    </script>
+    <footer>
+      <section class="footer">
+        <div class="container">
+          <div class="detail">
+            <h3>Nextwold</h3>
+            <p>
+              lorem ipssum dolor sit amet consetrtur adisicing elit. Face in,
+              non presentisum solution qute enim apprim aliqla, re totin porry,
+              well mobi tec erron.
+            </p>
+            <h5>get in touch</h5>
+            <a href="#">example@gmail.com</a>
+            <div class="social">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="about-us">
+            <h4>about us</h4>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our term</a></li>
+            <li>
+              <a href="#">careers<span>we're hiring!</span></a>
+            </li>
+            <li><a href="#">mission and values</a></li>
+            <li>
+              <a href="C:\xampp new\htdocs\My new web\register.html"
+                >register</a
+              >
+            </li>
+          </div>
+          <div class="about-us">
+            <h4>about us</h4>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">bookin gide</a></li>
+            <li><a href="#">cancllation polisy</a></li>
+            <li><a href="#">site map</a></li>
+            <li><a href="#">patnership</a></li>
+          </div>
+          <div class="about-us">
+            <h4>Resources</h4>
+            <li><a href="#">newsletttor</a></li>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">fhuj</a></li>
+            <li><a href="#">gallery</a></li>
+            <li><a href="#">patnership</a></li>
+          </div>
+        </div>
+        <div class="copyright">
+          <div>&copy:2024 = Flywold,inc,all rights reserved</div>
+          <div>
+            <a href="#">tem & conditions</a>
+            <a href="#">privacy policy</a>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
